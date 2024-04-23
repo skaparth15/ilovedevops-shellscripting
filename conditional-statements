@@ -1,0 +1,15 @@
+#!/bin/bash
+Number=$1
+if [ $Number -eq 10 ] 
+then
+   echo "$Number is lesser than 10"
+else
+   echo "$Number is greater than 10"
+fi
+
+
+#-gt - greater than
+#-lt - lesser than
+#-eq -equals
+#-le - less than or equals
+#-ge - greater than or equals
