@@ -1,5 +1,4 @@
 #!/bin/bash
-
-#will start tomorrow
-
-#steps to be added
+echo "starting the installation"
+dnf install nginx -y
+echo "completed the installation"
