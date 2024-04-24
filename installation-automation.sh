@@ -9,6 +9,7 @@ echo "starting the installation ......"
 else 
 echo "For installing any software you must have root access"
 exit 1;
+fi
 
 dnf install ${SOFTWARE}
 EXITSTATUS=$($?)
