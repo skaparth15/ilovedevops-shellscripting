@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "which software you want to execute "
 read SOFTWARE
-if [${id} -eq 0]
+if [$(id) -eq 0]
 then
 dnf install $SOFTWARE -y
 
