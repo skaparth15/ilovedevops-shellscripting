@@ -12,7 +12,7 @@ exit 1;
 fi
 
 dnf install ${SOFTWARE}
-EXITSTATUS=$($?)
+EXITSTATUS=$?
 if [$EXITSTATUS -eq 0]
 then 
 echo "${SOFTWARE} has downloaded sucessfully"
