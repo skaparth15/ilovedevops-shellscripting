@@ -2,10 +2,19 @@
 echo "which software you want to execute "
 read SOFTWARE
 USER=$(id -u)
-if [ ${USER} -ne 0 ]
+if [ ${USER} -eq 0 ]
 then
-dnf install $SOFTWARE -y
-echo "completed the installation"
+echo "you are a super user"
+echo "starting the installation ......"
 else 
 echo "For installing any software you must have root access"
+exit 1;
+
+dnf install ${SOFTWARE}
+EXITSTATUS=$($?)
+if[$EXITSTATUS -eq 0]
+then 
+echo "${SOFTWARE} has downloaded sucessfully"
+else
+echo "Downloading ${SOFTWARE} has failed ,please   check for the logs"
 fi
