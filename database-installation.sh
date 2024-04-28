@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "started installing mys1l-server"
 userid=$(id -u)
+scriptname= echo $0 | cut -d "." -f1
+echo $scriptname
+Logfile= /tmp/$scriptname.log
 
 userVerification(){
     if [ ${userid} -eq 0 ]
@@ -13,6 +16,6 @@ userVerification(){
 
 }
     $userVerification
-    dnf install mysql-server -y
+    dnf install mysql-server -y >> $Logfile
 
  
