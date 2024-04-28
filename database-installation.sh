@@ -20,12 +20,13 @@ userVerification(){
 softwareInstallationValidation(){
     EXITSTATUS=$?
 
-    if($EXITSTATUS -eq 0)
+    if ($EXITSTATUS -eq 0)
     then 
         echo "Installation Sucessful"
     else
         echo "Installation Failed"
-}
+    fi
+ }    
     userVerification
     dnf install mysql-server -y >>$Logfile
     softwareInstallationValidation
