@@ -20,7 +20,7 @@ userVerification(){
 softwareInstallationValidation(){
     EXITSTATUS=$?
 
-    if [ ${EXITSTATUS} -eq 0]
+    if [ ${EXITSTATUS} -eq 0 ]
     then 
         echo "Installation Sucessful"
     else
