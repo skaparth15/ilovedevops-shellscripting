@@ -44,7 +44,7 @@ softwareInstallationValidation(){
 
     echo "starting the mysql aerver"
     #systemctl start mysqld &>>$Logfile
-    systemServiceOperation "start" "mysqld"
-    softwareInstallationValidation "starting-mysqld-service"
+    systemServiceOperation "stop" "mysqld"
+    softwareInstallationValidation "stoping-mysqld-service"
 
 
