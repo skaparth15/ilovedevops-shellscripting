@@ -9,6 +9,7 @@ echo "user name :${whoami}"
 echo "hostname: $HOSTNAME"
 echo "process id of the shell script:$$"
 echo "exit status of the previous command:$?"
+echo "get the current user id :$id -u"
 sleep 30
 
 
