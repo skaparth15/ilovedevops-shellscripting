@@ -4,7 +4,7 @@ userid=$(id -u)
 Timestamp=$(date +%F-%H-%M-%s)
 scriptname=$(echo $0 | cut -d "." -f1)
 echo $scriptname
-Logfile= /tmp/$scriptname-$Timestamp.log
+Logfile=/tmp/$scriptname-$Timestamp.log
 
 userVerification(){
     if [ ${userid} -eq 0 ]
