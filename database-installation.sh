@@ -16,7 +16,17 @@ userVerification(){
     fi
 
 }
-    $userVerification
-    dnf install mysql-server -y >>$Logfile
 
+softwareInstallationValidation(){
+    EXITSTATUS=$?
+
+    if($EXITSTATUS -eq 0)
+    then 
+        echo "Installation Sucessful"
+    else
+        echo "Installation Failed"
+}
+    userVerification
+    dnf install mysql-server -y >>$Logfile
+    softwareInstallationValidation
  
