@@ -22,13 +22,20 @@ softwareInstallationValidation(){
 
     if [ ${EXITSTATUS} -eq 0 ]
     then 
-        echo "Installation Sucessful"
+        echo "$1 Successful"
     else
-        echo "Installation Failed"
+        echo "$1 Failed"
         exit 1
     fi
  }    
     userVerification
-    dnf install mysql-server -y >>$Logfile
-    softwareInstallationValidation
- 
+    dnf install mysql-server -y &>>$Logfile
+    softwareInstallationValidation "mysql-installation"
+    echo "enabiling the mysqlserver"
+    systemctl enable mysqld &>>$Logfile
+    softwareInstallationValidation "enabiling mysqld"
+    echo "starting the mysql aerver"
+    systemctl enable mysqld &>>$Logfile
+    softwareInstallationValidation "starting-mysqld-service"
+
+
