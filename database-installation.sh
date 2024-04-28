@@ -27,15 +27,24 @@ softwareInstallationValidation(){
         echo "$1 Failed"
         exit 1
     fi
- }    
+ }  
+
+   systemServiceOperation(){
+    operationName=$1
+    softwareName=$2
+    systemctl ${operationName} ${softwareName}
+   }  
     userVerification
     dnf install mysql-server -y &>>$Logfile
     softwareInstallationValidation "mysql-installation"
     echo "enabiling the mysqlserver"
-    systemctl enable mysqld &>>$Logfile
+   # systemctl enable mysqld &>>$Logfile
+    systemServiceOperation "enable" "mysqld"
     softwareInstallationValidation "enabiling mysqld"
+
     echo "starting the mysql aerver"
-    systemctl start mysqld &>>$Logfile
+    #systemctl start mysqld &>>$Logfile
+    systemServiceOperation "start" "mysqld"
     softwareInstallationValidation "starting-mysqld-service"
 
 
