@@ -35,7 +35,7 @@ softwareInstallationValidation(){
     systemctl enable mysqld &>>$Logfile
     softwareInstallationValidation "enabiling mysqld"
     echo "starting the mysql aerver"
-    systemctl enable mysqld &>>$Logfile
+    systemctl start mysqld &>>$Logfile
     softwareInstallationValidation "starting-mysqld-service"
 
 
