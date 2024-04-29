@@ -39,12 +39,19 @@ softwareInstallationValidation(){
     softwareInstallationValidation "mysql-installation"
     echo "enabiling the mysqlserver"
    # systemctl enable mysqld &>>$Logfile
-    systemServiceOperation "enable" "mysqld"
+    systemServiceOperation "enable" "mysqld"&>>$Logfile
     softwareInstallationValidation "enabiling mysqld"
 
-    echo "starting the mysql aerver"
+    echo "starting the mysql server"
     #systemctl start mysqld &>>$Logfile
-    systemServiceOperation "stop" "mysqld"
+    systemServiceOperation "start" "mysqld" &>>$Logfile
     softwareInstallationValidation "stoping-mysqld-service"
+
+
+    echo "please set the password to the mysql server"
+    read EXPENSEPASS
+    mysql_secure_installation --set-root-pass $EXPENSEPASS
+    softwareInstallationValidation "setting password to the mysql-server"
+
 
 
