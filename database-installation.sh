@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "started installing mys1l-server"
 userid=$(id -u)
-Timestamp=$(date +%F-%H-%M-%s)
+Timestamp=$(date +%F-%H-%M-%S)
 scriptname=$(echo $0 | cut -d "." -f1)
 echo $scriptname
 Logfile=/tmp/$scriptname-$Timestamp.log
