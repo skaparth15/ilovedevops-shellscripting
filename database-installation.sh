@@ -50,7 +50,7 @@ softwareInstallationValidation(){
 
     echo "please set the password to the mysql server"
     read EXPENSEPASS
-    mysql -h 172.31.30.63 -uroot -p${EXPENSEPASS} &>>$Logfile
+    mysql -h 172.31.30.63 -uroot -p{EXPENSEPASS} -e 'show databases'; &>>$Logfile
     if [ $? -ne 0 ]
         then
         echo "setting the password for mysql-server"
