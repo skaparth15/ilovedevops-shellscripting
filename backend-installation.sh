@@ -6,7 +6,7 @@ Logfile=/tmp/${scriptFileName}-${timeStamp}.log
 ApplicationUser="expense"
 
 softwareValidation(){
-    if [$? -eq 0]
+    if [ $? -eq 0 ]
     then 
         echo "$1 Successful"
     else 
