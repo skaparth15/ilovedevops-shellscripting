@@ -54,7 +54,7 @@ rm -rf /app/* &>>$Logfile
 unzip /tmp/backend.zip &>>$Logfile
 npm install &>>$Logfile
 softwareValidation "downloading the project dependencies"
-mv /home/ec2-user/ILOVEDEVOPS-SHELLSCRIPTING/backend.service /etc/systemd/system/backend.service
+mv /home/ec2-user/ilovedevops-shellscripting/backend.service /etc/systemd/system/backend.service
 softwareValidation  "configuration to backend server"
 systemctl daemon-reload &>>$LOGFILE
 
