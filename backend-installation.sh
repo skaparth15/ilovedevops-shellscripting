@@ -57,11 +57,11 @@ npm install &>>$Logfile
 softwareValidation "downloading the project dependencies"
 mv /home/ec2-user/ilovedevops-shellscripting/backend.service /etc/systemd/system/backend.service
 softwareValidation  "configuration to backend server"
-systemctl daemon-reload &>>$LOGFILE
+systemctl daemon-reload &>>$Logfile
 
-systemctl start backend &>>$LOGFILE
+systemctl start backend &>>$Logfile
 
-systemctl enable backend &>>$LOGFILE
+systemctl enable backend &>>$Logfile
 
 echo "installing mysql client to load schema from mysql server"
 dnf install mysql -y &>>$Logfile
