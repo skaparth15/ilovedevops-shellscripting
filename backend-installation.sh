@@ -1,6 +1,6 @@
 #!/bin/bash
 user=$(id -u)
-scriptFileName=$(echo $(0) | cut -d "." -f1)
+scriptFileName=$(echo $0 | cut -d "." -f1)
 timeStamp=$(date +%F-%H-%M-%S)
 Logfile=/tmp/${scriptFileName}-${timeStamp}.log  
 ApplicationUser="expense"
@@ -16,7 +16,7 @@ softwareValidation(){
 }
 
 
-if [ $user -eq 0]
+if [ $user -eq 0 ]
     then
         echo "you're root user,have access to execute this script"
         exit 1
