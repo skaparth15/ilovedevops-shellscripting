@@ -19,9 +19,10 @@ softwareValidation(){
 if [ $user -eq 0 ]
     then
         echo "you're root user,have access to execute this script"
-        exit 1
+        
     else
         echo "For running this script you should have root previliges"
+        ecit 1
 fi
 echo "Started  configuration for backend server ...."
 echo "enter the nodejs version you want to disable"
