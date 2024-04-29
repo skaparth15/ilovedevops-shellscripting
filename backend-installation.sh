@@ -25,9 +25,9 @@ if [ $user -eq 0 ]
         ecit 1
 fi
 echo "Started  configuration for backend server ...."
-echo "enter the nodejs version you want to disable"
-read nodejsVersion
-dnf module disable nodejs:$nodejsVersion -y &>>$Logfile
+#echo "enter the nodejs version you want to disable"
+#read nodejsVersion
+dnf module disable nodejs -y &>>$Logfile
 softwareValidation  "disabled nodejs"
 echo "enter the nodejs version to be enabled, as per developers requirement"
 read nodejsVersionToEnable
