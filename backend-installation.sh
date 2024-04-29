@@ -37,8 +37,8 @@ dnf install nodejs -y &>>$Logfile
 softwareValidation  "installing nodejs"
 echo  "Adding User ${ApplicationUser} is a function , daemon user to run the application"
 
-id ${ApplicationUser}
-if [$? -ne 0]
+id ${ApplicationUser} &>>$Logfile
+if [ $? -ne 0 ]
 then 
   useradd ${ApplicationUser} 
   softwareValidation "user added "
