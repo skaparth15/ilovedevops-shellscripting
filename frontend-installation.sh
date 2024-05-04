@@ -1,7 +1,7 @@
 #!/bin/bash
 userid=$(id -u)
 scriptFileName=$(echo $0 | cut -d "." -f1)
-timeStamp=$(date+%F+%H-%M-%S)
+timeStamp=$(date +%F+%H-%M-%S)
 Logfile=/tmp/${scriptFileName}-${timeStamp}.log  
 validateUser()
 {
