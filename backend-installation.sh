@@ -68,7 +68,7 @@ dnf install mysql -y &>>$Logfile
 softwareValidation "installing mysql-client "
 echo "enter the mysql-server pass:"
 read mysqlSeverPass
-mysql -h 172.31.23.173 -uroot -p${mysqlSeverPass} < /app/schema/backend.sql &>>$Logfile
+mysql -h db.ilovedevops.cloud -uroot -p${mysqlSeverPass} < /app/schema/backend.sql &>>$Logfile
 softwareValidation "schema got loaded sucessfully"
 systemctl restart backend
 

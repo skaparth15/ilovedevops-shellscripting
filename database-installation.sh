@@ -50,7 +50,7 @@ softwareInstallationValidation(){
 
     echo "please set the password to the mysql server"
     read EXPENSEPASS
-    mysql -h 172.31.23.173 -uroot -p${EXPENSEPASS} -e 'show databases;' &>>$Logfile
+    mysql -h db.ilovedevops.cloud -uroot -p${EXPENSEPASS} -e 'show databases;' &>>$Logfile
     if [ $? -ne 0 ]
     then
         echo "setting the password for mysql-server"
