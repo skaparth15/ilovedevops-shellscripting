@@ -17,7 +17,7 @@ validateUser()
 
 validateSoftwareStatus()
 {
-    if [ $? -eq 0]
+    if [ $? -eq 0 ]
     then
     echo "$1 Successfull"
     else
