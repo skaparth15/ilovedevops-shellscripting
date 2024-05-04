@@ -22,7 +22,7 @@ if [ $user -eq 0 ]
         
     else
         echo "For running this script you should have root previliges"
-        ecit 1
+        exit 1
 fi
 echo "Started  configuration for backend server ...."
 #echo "enter the nodejs version you want to disable"
